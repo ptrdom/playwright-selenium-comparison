@@ -18,4 +18,6 @@ jobs:
         with:
           jvm: temurin:17
       - name: Run checks
-        run: sbt test
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: sbt test
