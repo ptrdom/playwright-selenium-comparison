@@ -8,5 +8,6 @@ lazy val root = (project in file("."))
     name := "playwright-selenium-comparison",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % "test",
     libraryDependencies += "org.scalatestplus" %% "selenium-4-17" % "3.2.18.0" % "test",
+    libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "4.18.1",
     Test / testOptions += Tests.Argument("-oD")
   )
