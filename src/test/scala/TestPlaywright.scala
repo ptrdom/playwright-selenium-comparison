@@ -10,7 +10,7 @@ class TestPlaywright extends AnyWordSpec {
     Using(Playwright.create()) { playwright =>
       val browser = playwright
         .chromium()
-        .launch(new BrowserType.LaunchOptions().setHeadless(false))
+        .launch(new BrowserType.LaunchOptions())
       val page = browser.newPage();
       page.navigate("http://playwright.dev");
       System.out.println(page.title());
