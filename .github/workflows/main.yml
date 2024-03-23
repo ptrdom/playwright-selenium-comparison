@@ -10,13 +10,17 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-14]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: coursier/cache-action@v6
       - uses: coursier/setup-action@v1
         with:
           jvm: temurin:17
+          apps: sbt
       - name: Run checks
         uses: coactions/setup-xvfb@v1
         with:
